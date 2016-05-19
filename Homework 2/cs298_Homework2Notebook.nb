@@ -1,0 +1,1010 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     38422,       1001]
+NotebookOptionsPosition[     36612,        936]
+NotebookOutlinePosition[     36965,        952]
+CellTagsIndexPosition[     36922,        949]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["CS 298 - Homework 2", "Title",
+ CellChangeTimes->{{3.6468536848524523`*^9, 3.646853696514786*^9}}],
+
+Cell["Kyle Perra - 7/25/2015", "Subtitle",
+ CellChangeTimes->{{3.6468537159856653`*^9, 3.6468537378112373`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Constrained Growth", "Section",
+ CellChangeTimes->{{3.646853757730462*^9, 3.6468537608016453`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"solution", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"p", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{"1.01", 
+        RowBox[{"p", "[", "t", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"p", "[", "0", "]"}], "\[Equal]", "15000"}]}], "}"}], ",", 
+    RowBox[{"p", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6468542012048645`*^9, 3.646854292868264*^9}, 
+   3.6468552737521334`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"p", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{"15000.`", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"1.01`", " ", "t"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6468543489703207`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "t", "]"}], "/.", "solution"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "5"}], "}"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<time (years)\>\"", ",", "\"\<Population(t)\>\""}], "}"}]}], 
+   ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "10"}], "}"}], ",", "Automatic"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.646854355956277*^9, 3.646854363435614*^9}, {
+   3.64685466221379*^9, 3.6468546925164375`*^9}, 3.6468547287832856`*^9, {
+   3.6468547908736134`*^9, 3.6468548459238634`*^9}, {3.6468549287639704`*^9, 
+   3.6468549644704456`*^9}, {3.646855118128107*^9, 3.646855163968813*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1:eJwVkmk4FHgcgMeMcR/xLwnDJBUWm8QW2/x/v7WtbHRoZR3F5FhEiootKvU0
+6FLZeArbpbYS+6j0OEqzjXYYZrZNOrWOHBlHo2kYx7Lth/d5v72f3vlbkwKi
+mQwGw/8z/7t4/1Yt16h9vHyL60sZflL4NWTQM4gbTMOW/rHyYpAUXvkfTeZy
+4+gzgajn20gppPoEG7G5P1P/6eekaK8UvquHsDGbHLo59zfLQzekUHZo2WGF
+zTmalNeQ6qIjg05+udmQzQ36V87Z1DmNMti3YVvEgE01dRS/bxM5PQHd8cLG
+BBcJtUi78iGL+RR2PjpwfDC5hTJrTOod+lvApSTv77vlr6gXqWgj6lboWRtr
+1b68gy7Q7BiM3/kSCiwEnEsR76iH1N22jPEGViRX/c5q7qVpori9GbP/AdGL
+wvVJi+VUUiz3LqrqANfj0zxz3yGqXrkR1+3uAp9ez/YlQQpq/stwRuexbuhz
+vrfq0+AIjXJpOsCv7IV9Uzlu9/cqaU2fxWCGQT9om7yP+8FRRS0Ts4+dbhsA
+tpTto/9glNaHfk3dHw/DpKws4cxONd1RGVzkYTsCPUHl86ytJ6jHkklqpq8E
+zN6e2FA2SSXO85tmWCo4O12l6x3+L02ZHx8h3zoGoVYivzblNJ08qVnIfjEO
+BsIvBm0DGdC+yaJguWQKot0vq4KdNCBE3HGvToOBqfvTArgqDVCOvRqmtzTw
+iDyvRSZjgl9EgJn6Fgv9HI2vG5xnwVoH1GEI2XiizEPox9eE7i2+D/qntVGy
+8crUrhVs0Aw97z1coYdCadJxJ5YW9GU6xdamG+Lt+ExofqsFnJIt24wSZqH1
+Grp8+11tSAi92rsLTdF7JuzwhXQdeJfbJYlZNBujnj/8WBWoCyyy5+KmRDPk
+ZR6q5HP1YLI/P0XWYI5nkkZqDfr0wM2YLZYHWmLXwau9F+r0odJSptMZY40D
+0dVRj7IM4MV7jtyrkYuKRFNtKd8QnO2yg0mFLZb7Nk3FOBuBMmTGK+OmHfbG
+LvFgqYzAPp3zZ4N0EVqUvs7LkhpD6Qfm7kvhDng4IvmydM0sUCQssA7QccKx
+qXkn1lTPgsVz/RdWe36J9rUF5yR2JrBq4ZuBtDBXdI98vM4kxwTipN7jAkc3
+FBbNMW9WmUB9SqS3OtAd7YVzjq4NNYXRCTln4dmv0J89yHlaZwp2ug6F9SxP
+VLzpFjU6EtCxq1jBUXyNSUUnSE4ugVareCSjFJs17D58f5pAeW17gi0T0PGn
+GolBHoGD1W/DebqA3a59mafyCRjvH3p4YC7gj2JQFBQT6Bm4k2u/DPCbj8rm
+a6UEqtZfv0m2A5qtDhHUiwmMqxpag7sBU8oUfEEjgWsaYt7rAcAnplkrVzcR
+WNBaOLX5837H3t751CQjkL2jMj2JichIMYxsaSXAu8CrquEiyouFtOsdgfOT
+R7YpNyP6sIIsS3oI3PcYeHYjGrEkdmg0uo/ApWzb0shExHA3i/J+OQH9W5yS
+znTEZw0pViMjBIS7tZVaRYiuLnrq20oCk8tqhl5eQTyZd7Fll4pAsW0Gv7wU
+0XeL9KhaTcBXEF4TWYt4TRQZUzNBQFCRf9lbhKjpMIHpUwS89hjqLW5C5J88
+xeFNf+7FbPho2IJYp1w0PjNDgC1WhKlfI/4HydI1NQ==
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"time (years)\"", TraditionalForm], 
+    FormBox["\"Population(t)\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None},
+  PlotRange->{{0, 10}, {0., 2.3403367260979437`*^6}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.64685467887768*^9, 3.646854696664369*^9}, 
+   3.646854732054618*^9, {3.6468547934634323`*^9, 3.646854848061405*^9}, {
+   3.64685493706389*^9, 3.646854967254445*^9}, 3.646855133642146*^9, 
+   3.646855168059723*^9}]
+}, Open  ]],
+
+Cell["\<\
+The Yuppie population will extend beyond 1000000 in New York City after the \
+year 2017. (Approx. 4.2)\
+\>", "Text",
+ CellChangeTimes->{{3.6469315895234537`*^9, 3.646931592385016*^9}, {
+  3.646931684725906*^9, 3.646931736747517*^9}, {3.646931828560491*^9, 
+  3.646931875374954*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler\[CloseCurlyQuote]s Method", "Section",
+ CellChangeTimes->{{3.6468552374252243`*^9, 3.6468552436486645`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "dP", ",", "p", ",", "t", ",", "deltaT", ",", "numIterations", ",", 
+   "exactP", ",", "P", ",", "dataTable"}], "]"}]], "Input",
+ CellChangeTimes->{{3.646855727272697*^9, 3.6468557332019567`*^9}, {
+  3.646856495204636*^9, 3.646856520893965*^9}, {3.646856671028057*^9, 
+  3.646856672076808*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"P", "=", "40"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dP", "[", "P_", "]"}], ":=", 
+   RowBox[{"0.2", 
+    RowBox[{"(", 
+     RowBox[{"P", "-", "10"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"deltaT", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numIterations", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"exactP", " ", "=", " ", "P"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6468565271484003`*^9, 3.6468566508466845`*^9}, {
+  3.6468572743785686`*^9, 3.64685727497897*^9}, {3.646926541490345*^9, 
+  3.6469265492854357`*^9}, {3.6469282355841618`*^9, 3.646928238567595*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dataTable", " ", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "P", ",", "exactP", ",", "0"}], "}"}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6468566632144856`*^9, 3.646856697747148*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", "=", 
+     RowBox[{"i", "*", "deltaT"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"P", "=", 
+     RowBox[{"P", "+", 
+      RowBox[{
+       RowBox[{"dP", "[", "P", "]"}], "*", "deltaT"}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"exactP", "=", 
+     RowBox[{"100", 
+      RowBox[{"E", "^", 
+       RowBox[{"(", 
+        RowBox[{"0.1", "t"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"dataTable", " ", "=", " ", 
+     RowBox[{"Append", "[", 
+      RowBox[{"dataTable", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "P", ",", "exactP", ",", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"P", "-", "exactP"}], "]"}], "/", "exactP"}]}], "}"}]}], 
+      "]"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "numIterations"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6468567054426107`*^9, 3.6468568568616753`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"TableForm", "[", "dataTable", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"values", "=", 
+   RowBox[{"dataTable", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "values", "]"}]}], "Input",
+ CellChangeTimes->{{3.6468569833819175`*^9, 3.6468570243531775`*^9}, {
+  3.646928414897834*^9, 3.646928415584736*^9}, {3.6469285483025846`*^9, 
+  3.646928587041882*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "40", "40", "0"},
+    {"2", "176.`", "122.14027581601698`", "0.4409661254172481`"},
+    {"4", "2689.28`", "149.18246976412703`", "17.026782934027242`"},
+    {"6", "581805.2894720002`", "182.21188003905093`", "3192.01512803287`"},
+    {"8", "2.7080489754955204`*^10", "222.55409284924679`", 
+     "1.2168048309381053`*^8"},
+    {"10", "5.86682340619553`*^19", "271.8281828459045`", 
+     "2.1582837161227494`*^17"},
+    {"12", "2.7535693503586984`*^38", "332.01169227365483`", 
+     "8.293591504268822`*^35"},
+    {"14", "6.06571533378786`*^75", "405.5199966844675`", 
+     "1.4957869854461345`*^73"},
+    {"16", "2.9434322008439343`*^150", "495.3032424395115`", 
+     "5.942687123037355`*^147"},
+    {"18", "6.931034496771973`*^299", "604.9647464412947`", 
+     "1.1456922965418706`*^297"},
+    {"20", 
+     "3.843139135635449867043907967955992766967`15.954589770191005*^598", 
+     "738.905609893065`", 
+     "5.201123234389344888540482334816912948`15.954589770191005*^595"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.6468570261044273`*^9, {3.646857286698347*^9, 3.646857299241288*^9}, 
+   3.6468573322608447`*^9, 3.646926570683178*^9, {3.646928420269042*^9, 
+   3.6469284241308517`*^9}, {3.6469285510027943`*^9, 3.646928588797924*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{0., 40.}, {2., 122.14027581601698`}, {4., 
+      149.18246976412703`}, {6., 182.21188003905093`}, {8., 
+      222.55409284924679`}, {10., 271.8281828459045}, {12., 
+      332.01169227365483`}, {14., 405.5199966844675}, {16., 
+      495.3032424395115}, {18., 604.9647464412947}, {20., 
+      738.905609893065}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{0, 20.}, {0, 738.905609893065}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.6468570261044273`*^9, {3.646857286698347*^9, 3.646857299241288*^9}, 
+   3.6468573322608447`*^9, 3.646926570683178*^9, {3.646928420269042*^9, 
+   3.6469284241308517`*^9}, {3.6469285510027943`*^9, 3.646928588844894*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Q1:\t122.14
+Q2:\t149.182
+Q3:\t182.212
+Q4:\t222.554\
+\>", "Text",
+ CellChangeTimes->{{3.646930392823494*^9, 3.646930433211657*^9}, {
+  3.646930478444347*^9, 3.646930498497294*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Runge-Kutta", "Section",
+ CellChangeTimes->{{3.646857361072424*^9, 3.6468573667994823`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "dP", ",", "P", ",", "numIterations", ",", "deltaT", ",", "exactP", ",", 
+    "dataTable", ",", "PredictionPoint"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.646857459763811*^9, 3.646857486738057*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"P", "=", "40"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"dP", "[", "P_", "]"}], ":=", 
+    RowBox[{"0.2", 
+     RowBox[{"(", 
+      RowBox[{"P", "-", "10"}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"deltaT", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numIterations", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"exactP", " ", "=", " ", "P"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6469265970865088`*^9, 3.646926602515329*^9}, {
+  3.646928225400334*^9, 3.646928228992133*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dataTable", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "P", ",", "exactP", ",", "0"}], "}"}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.646857499438145*^9, 3.6468575114957485`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", "=", 
+     RowBox[{"i", "*", "deltaT"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"PredictionPoint", "=", 
+     RowBox[{"P", "*", 
+      RowBox[{"dP", "[", "P", "]"}], "*", "deltaT"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"P", "=", 
+     RowBox[{"P", "+", 
+      RowBox[{"0.5", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"dP", "[", "P", "]"}], "+", 
+         RowBox[{"dP", "[", "PredictionPoint", "]"}]}], ")"}], "*", 
+       "deltaT"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"exactP", "=", 
+     RowBox[{"100", 
+      RowBox[{"E", "^", 
+       RowBox[{"(", 
+        RowBox[{"0.1", "t"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"dataTable", "=", 
+     RowBox[{"Append", "[", 
+      RowBox[{"dataTable", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "P", ",", "exactP", ",", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"P", "-", "exactP"}], "]"}], "/", "exactP"}]}], "}"}]}], 
+      "]"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "numIterations"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", "dataTable", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"values", "=", 
+   RowBox[{"dataTable", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "values", "]"}]}], "Input",
+ CellChangeTimes->{{3.646857516323166*^9, 3.6468577354105096`*^9}, {
+  3.6469285952692738`*^9, 3.646928595681622*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "40", "40", "0"},
+    {"2", "176.`", "122.14027581601698`", "0.4409661254172481`"},
+    {"4", "2689.28`", "149.18246976412703`", "17.026782934027242`"},
+    {"6", "581805.2894720002`", "182.21188003905093`", "3192.01512803287`"},
+    {"8", "2.7080489754955204`*^10", "222.55409284924679`", 
+     "1.2168048309381053`*^8"},
+    {"10", "5.86682340619553`*^19", "271.8281828459045`", 
+     "2.1582837161227494`*^17"},
+    {"12", "2.7535693503586984`*^38", "332.01169227365483`", 
+     "8.293591504268822`*^35"},
+    {"14", "6.06571533378786`*^75", "405.5199966844675`", 
+     "1.4957869854461345`*^73"},
+    {"16", "2.9434322008439343`*^150", "495.3032424395115`", 
+     "5.942687123037355`*^147"},
+    {"18", "6.931034496771973`*^299", "604.9647464412947`", 
+     "1.1456922965418706`*^297"},
+    {"20", 
+     "3.843139135635449867043907967955992766967`15.954589770191005*^598", 
+     "738.905609893065`", 
+     "5.201123234389344888540482334816912948`15.954589770191005*^595"},
+    {"2", 
+     "1.1815774732682235495924736587601987604782`15.954589770191005*^1196", 
+     "122.14027581601698`", 
+     "9.6739381450887169091952032556909937416`15.954589770191005*^1193"},
+    {"4", 
+     "1.1169002602679357535408979428331010829824`15.954589770191005*^2391", 
+     "149.18246976412703`", 
+     "7.486806338800202175956820007349254293`15.954589770191005*^2388"},
+    {"6", 
+     "9.9797295310926621132368643670132843168183`15.954589770191005*^4780", 
+     "182.21188003905093`", 
+     "5.47699169173483407337705100334883051555`15.954589770191005*^4778"},
+    {"8", 
+     "7.967600121101038133921965658045952761168579`15.954589770191005*^9560", 
+     "222.55409284924679`", 
+     "3.5800735089145782684137171749861327432475`15.954589770191005*^9558"},
+    {"10", 
+     "5.07861213518154276680999210334491136496675916985`15.954589770191005*^\
+19120", "271.8281828459045`", 
+     "1.868316994217091531061159259072176902279740291`15.954589770191005*^\
+19118"},
+    {"12", "2.06338409756905853485112218039965359`15.954589770191005*^38240", 
+     "332.01169227365483`", 
+     "6.2147934713948271744755562605252156382770917137781101`15.\
+954589770191005*^38237"},
+    {"14", 
+     "3.406043147280702835324095822071412605926250041990542`15.\
+954589770191005*^76479", "405.5199966844675`", 
+     "8.399198991735352289730935240354495127771752000983`15.954589770191005*^\
+76476"},
+    {"16", 
+     "9.2809039369102694674089290325916075669005425`15.954589770191005*^\
+152957", "495.3032424395115`", 
+     "1.87378218870507229115662384372687521012196`15.954589770191005*^152955"},
+    {"18", 
+     "6.890814230892523890043733504240518543301125527512`15.954589770191005*^\
+305914", "604.9647464412947`", 
+     "1.1390439313080210136954758292669466779602104677`15.954589770191005*^\
+305912"},
+    {"20", 
+     "3.798665661173674465340866164875295353037`15.954589770191005*^611828", 
+     "738.905609893065`", 
+     "5.140934931761338536711605161198767757`15.954589770191005*^611825"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6468578585863657`*^9, 3.646926570813216*^9, 
+  3.6469266154806147`*^9, 3.646928598133857*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQjQpcHKAMhzm9We6/OuKgfAGH52uvnLq2NAnKl3A4
+cmbpjuPH0qB8BYczfm8Vdl/MhvJVHLyeLLdx+FsA5Ws4ZJ23eaJ/oATK13EQ
+kOV+ERhRCeUbOCS27xO59aUOyjdyiCj6fWb78yYo38TBwDdtg514+6B3HwCX
+fVxF
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{0, 20.}, {0, 738.905609893065}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6468578585863657`*^9, 3.646926570813216*^9, 
+  3.6469266154806147`*^9, 3.646928598198284*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.64692993568992*^9, 3.6469299608692627`*^9}}],
+
+Cell["\<\
+The relative error for the calculation of Q1 for Euler\[CloseCurlyQuote]s vs. \
+Runge Kutta 2 is 44.0966%.\
+\>", "Text",
+ CellChangeTimes->{{3.646930058349454*^9, 3.646930080952096*^9}, {
+  3.646930175293446*^9, 3.6469301915008287`*^9}, {3.646930226013752*^9, 
+  3.646930233723336*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Predator & Prey", "Section",
+ CellChangeTimes->{{3.6469259850684347`*^9, 3.646925991937402*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "mouseConsumptionRate", ",", "mouseGrowthRate", ",", "hawkDeathRate", ",", 
+    "hawkGrowthRate", ",", "mouse", ",", "hawk", ",", "t", ",", "mouse0", ",",
+     "hawk0", ",", "t1", ",", "tMax"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.646926843049124*^9, 3.646926874213621*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LotkaVolterra", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", " ", 
+      RowBox[{
+      "mouseGrowthRate_", ",", "mouseConsumptionRate_", ",", "hawkDeathRate_",
+        ",", "hawkGrowthRate_"}], "}"}], ",", 
+     RowBox[{"(*", " ", 
+      RowBox[{"4", "-", "vector"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"mouse0_", ",", "hawk0_"}], "}"}], ",", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"starting", " ", "populations", " ", "hawk"}], ",", "mouse"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "t1_"}], "]"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"desired", " ", "time", " ", "calc"}], " ", "*)"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mouse", ",", "hawk", ",", "t"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"mouse", ",", "hawk"}], "}"}], "/.", 
+       RowBox[{"Quiet", "[", 
+        RowBox[{"NDSolve", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"mouse", "'"}], "[", "t", "]"}], "\[Equal]", 
+             RowBox[{
+              RowBox[{"mouseGrowthRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}]}], "-", 
+              RowBox[{"mouseConsumptionRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}]}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"hawk", "'"}], "[", "t", "]"}], "\[Equal]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "hawkDeathRate"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}], "+", 
+              RowBox[{"hawkGrowthRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}]}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"mouse", "[", "0", "]"}], "\[Equal]", "mouse0"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"hawk", "[", "0", "]"}], "\[Equal]", "hawk0"}]}], "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"mouse", ",", "hawk"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "t1"}], "}"}]}], "]"}], "]"}]}], "//", 
+      "Flatten"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"soln", ",", 
+       RowBox[{"col1", "=", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.0", ",", "0.0", ",", "0.9"}], "]"}]}], ",", 
+       RowBox[{"col2", "=", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.9", ",", "0", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", "t", "]"}], ",", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", "t", "]"}]}], "}"}], "&"}],
+          "[", 
+         RowBox[{"soln", "=", 
+          RowBox[{"LotkaVolterra", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+             "mouseGrowthRate", ",", "\[IndentingNewLine]", 
+              "mouseConsumptionRate", ",", "\[IndentingNewLine]", 
+              "hawkDeathRate", ",", "\[IndentingNewLine]", "hawkGrowthRate"}],
+              "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"mouse0", ",", "hawk0"}], "}"}], ",", "tMax"}], "]"}]}], 
+         "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"Min", "[", 
+          RowBox[{"tMax", ",", 
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "&"}], "/@", 
+             "soln"}], "]"}]}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<time\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"mice", "[", "t", "]"}], ",", "col1"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"hawks", "[", "t", "]"}], ",", "col2"}], "]"}]}], 
+           "}"}]}], "}"}]}], ",", " ", 
+       RowBox[{"(*", 
+        RowBox[{"color", " ", "code", " ", 
+         RowBox[{"hawk", "/", "squirrel"}], " ", "pops"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"AxesOrigin", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"col1", ",", "col2"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"400", ",", "300"}], "}"}]}], ",", 
+       RowBox[{"ImagePadding", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"55", ",", "40"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", "25"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "mouseGrowthRate", ",", "4.89", ",", "\"\<Squirrel Growth Rate\>\""}], 
+      "}"}], ",", "0", ",", "5", ",", ".01", "\[IndentingNewLine]", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "mouseConsumptionRate", ",", "1.9", ",", 
+       "\"\<Squirrel Consumption Rate\>\""}], "}"}], ",", ".01", ",", "5", 
+     ",", ".01", ",", "\[IndentingNewLine]", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"hawkDeathRate", ",", "2.52", ",", "\"\<Hawk Death Rate\>\""}], 
+      "}"}], ",", "0", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "hawkGrowthRate", ",", "3.28", ",", "\"\<Hawk Growth Rate\>\""}], "}"}],
+      ",", "0", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   "\"\<Initial Populations\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mouse0", ",", "204", ",", "\"\<squirrel(s)\>\""}], "}"}], ",", 
+     "0", ",", "300", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"hawk0", ",", "12", ",", "\"\<hawk/hawks\>\""}], "}"}], ",", 
+     "0", ",", "25", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tMax", ",", "3", ",", "\"\<Projection time\>\""}], "}"}], ",", 
+     ".01", ",", "50", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.646927306575159*^9, 3.6469273080647583`*^9}, {
+   3.646927419571965*^9, 3.646927433320711*^9}, {3.6469275343438883`*^9, 
+   3.646927539380515*^9}, {3.646927796380886*^9, 3.646927821073256*^9}, {
+   3.646927903512354*^9, 3.646927905365823*^9}, {3.646928006676784*^9, 
+   3.646928007945422*^9}, {3.6469287925741043`*^9, 3.6469288922082148`*^9}, 
+   3.646928926294366*^9, {3.646929000223598*^9, 3.646929085889179*^9}, {
+   3.646929346482019*^9, 3.646929347078994*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`hawk0$$ = 12, $CellContext`hawkDeathRate$$ =
+     2.52, $CellContext`hawkGrowthRate$$ = 3.28, $CellContext`mouse0$$ = 
+    204, $CellContext`mouseConsumptionRate$$ = 
+    1.9, $CellContext`mouseGrowthRate$$ = 4.89, $CellContext`tMax$$ = 6, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`mouseGrowthRate$$], 4.89, "Squirrel Growth Rate"}, 0,
+       5, 0.01}, {{
+       Hold[$CellContext`mouseConsumptionRate$$], 1.9, 
+       "Squirrel Consumption Rate"}, 0.01, 5, 0.01}, {{
+       Hold[$CellContext`hawkDeathRate$$], 2.52, "Hawk Death Rate"}, 0, 5, 
+      0.01}, {{
+       Hold[$CellContext`hawkGrowthRate$$], 3.28, "Hawk Growth Rate"}, 0, 5, 
+      0.01}, {
+      Hold["Initial Populations"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`mouse0$$], 204, "squirrel(s)"}, 0, 300}, {{
+       Hold[$CellContext`hawk0$$], 12, "hawk/hawks"}, 0, 25}, {{
+       Hold[$CellContext`tMax$$], 3, "Projection time"}, 0.01, 50}}, 
+    Typeset`size$$ = {400., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`mouseGrowthRate$18605$$ = 
+    0, $CellContext`mouseConsumptionRate$18606$$ = 
+    0, $CellContext`hawkDeathRate$18607$$ = 
+    0, $CellContext`hawkGrowthRate$18608$$ = 0, $CellContext`mouse0$18609$$ = 
+    0, $CellContext`hawk0$18610$$ = 0, $CellContext`tMax$18611$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`hawk0$$ = 12, $CellContext`hawkDeathRate$$ = 
+        2.52, $CellContext`hawkGrowthRate$$ = 3.28, $CellContext`mouse0$$ = 
+        204, $CellContext`mouseConsumptionRate$$ = 
+        1.9, $CellContext`mouseGrowthRate$$ = 4.89, $CellContext`tMax$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`mouseGrowthRate$$, \
+$CellContext`mouseGrowthRate$18605$$, 0], 
+        Hold[$CellContext`mouseConsumptionRate$$, \
+$CellContext`mouseConsumptionRate$18606$$, 0], 
+        Hold[$CellContext`hawkDeathRate$$, $CellContext`hawkDeathRate$18607$$,
+          0], 
+        Hold[$CellContext`hawkGrowthRate$$, \
+$CellContext`hawkGrowthRate$18608$$, 0], 
+        Hold[$CellContext`mouse0$$, $CellContext`mouse0$18609$$, 0], 
+        Hold[$CellContext`hawk0$$, $CellContext`hawk0$18610$$, 0], 
+        Hold[$CellContext`tMax$$, $CellContext`tMax$18611$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`soln$, $CellContext`col1$ = 
+         RGBColor[0., 0., 0.9], $CellContext`col2$ = RGBColor[0.9, 0, 0]}, 
+        Plot[
+         Evaluate[
+          ({
+           Part[#, 1][$CellContext`t], 
+           
+           Part[#, 2][$CellContext`t]}& )[$CellContext`soln$ = \
+$CellContext`LotkaVolterra[{$CellContext`mouseGrowthRate$$, \
+$CellContext`mouseConsumptionRate$$, $CellContext`hawkDeathRate$$, \
+$CellContext`hawkGrowthRate$$}, {$CellContext`mouse0$$, \
+$CellContext`hawk0$$}, $CellContext`tMax$$]]], {$CellContext`t, 0, 
+          Min[$CellContext`tMax$$, 
+           Min[
+            Map[Part[#, 1, 1, 2]& , $CellContext`soln$]]]}, 
+         AxesLabel -> {"time", {
+            Style[
+             $CellContext`mice[$CellContext`t], $CellContext`col1$], 
+            Style[
+             $CellContext`hawks[$CellContext`t], $CellContext`col2$]}}, 
+         PlotRange -> All, AxesOrigin -> {0, 0}, 
+         PlotStyle -> {$CellContext`col1$, $CellContext`col2$}, 
+         ImageSize -> {400, 300}, ImagePadding -> {{55, 40}, {10, 25}}]], 
+      "Specifications" :> {{{$CellContext`mouseGrowthRate$$, 4.89, 
+          "Squirrel Growth Rate"}, 0, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`mouseConsumptionRate$$, 1.9, 
+          "Squirrel Consumption Rate"}, 0.01, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`hawkDeathRate$$, 2.52, "Hawk Death Rate"},
+          0, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`hawkGrowthRate$$, 3.28, 
+          "Hawk Growth Rate"}, 0, 5, 0.01, Appearance -> "Labeled"}, 
+        Delimiter, 
+        "Initial Populations", {{$CellContext`mouse0$$, 204, "squirrel(s)"}, 
+         0, 300, Appearance -> 
+         "Labeled"}, {{$CellContext`hawk0$$, 12, "hawk/hawks"}, 0, 25, 
+         Appearance -> "Labeled"}, 
+        Delimiter, {{$CellContext`tMax$$, 3, "Projection time"}, 0.01, 50, 
+         Appearance -> "Labeled"}}, "Options" :> {ControlPlacement -> Left}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{821., {176., 181.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`LotkaVolterra[{
+          Pattern[$CellContext`mouseGrowthRate, 
+           Blank[]], 
+          Pattern[$CellContext`mouseConsumptionRate, 
+           Blank[]], 
+          Pattern[$CellContext`hawkDeathRate, 
+           Blank[]], 
+          Pattern[$CellContext`hawkGrowthRate, 
+           Blank[]]}, {
+          Pattern[$CellContext`mouse0, 
+           Blank[]], 
+          Pattern[$CellContext`hawk0, 
+           Blank[]]}, 
+         Pattern[$CellContext`t1, 
+          Blank[]]] := 
+       Module[{$CellContext`mouse, $CellContext`hawk, $CellContext`t}, 
+         Flatten[
+          ReplaceAll[{$CellContext`mouse, $CellContext`hawk}, 
+           Quiet[
+            
+            NDSolve[{
+             Derivative[
+               1][$CellContext`mouse][$CellContext`t] == \
+$CellContext`mouseGrowthRate $CellContext`mouse[$CellContext`t] - \
+$CellContext`mouseConsumptionRate $CellContext`mouse[$CellContext`t] \
+$CellContext`hawk[$CellContext`t], 
+              Derivative[
+               1][$CellContext`hawk][$CellContext`t] == \
+(-$CellContext`hawkDeathRate) $CellContext`hawk[$CellContext`t] + \
+$CellContext`hawkGrowthRate $CellContext`mouse[$CellContext`t] \
+$CellContext`hawk[$CellContext`t], $CellContext`mouse[
+               0] == $CellContext`mouse0, $CellContext`hawk[
+               0] == $CellContext`hawk0}, {$CellContext`mouse, \
+$CellContext`hawk}, {$CellContext`t, 0, $CellContext`t1}]]]]], 
+       Attributes[Derivative] = {NHoldAll, ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.646928954252296*^9, 3.6469291086146812`*^9, 
+  3.646929349459537*^9}]
+}, Open  ]],
+
+Cell["\<\
+Question: Are there enough hawks in the park to ensure that in the long-run \
+(more than 3 months from the current time), the squirrel population will be \
+reduced to(and
+remain) below 100?
+
+\tYes - after six months the squrrel population remains under 100.\
+\>", "Text",
+ CellChangeTimes->{{3.646930781671752*^9, 3.646930810216517*^9}, {
+  3.6469308617400427`*^9, 3.646930874235587*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "Title"]
+},
+WindowSize->{641, 685},
+WindowMargins->{{Automatic, -30}, {Automatic, 0}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 6, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 104, 1, 92, "Title"],
+Cell[687, 25, 112, 1, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[824, 30, 105, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[954, 35, 522, 15, 28, "Input"],
+Cell[1479, 52, 280, 8, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1796, 65, 804, 20, 63, "Input"],
+Cell[2603, 87, 2902, 58, 202, "Output"]
+}, Open  ]],
+Cell[5520, 148, 292, 6, 49, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5849, 159, 120, 1, 64, "Section"],
+Cell[5972, 162, 345, 7, 28, "Input"],
+Cell[6320, 171, 699, 17, 97, "Input"],
+Cell[7022, 190, 251, 7, 28, "Input"],
+Cell[7276, 199, 970, 27, 131, "Input"],
+Cell[CellGroupData[{
+Cell[8271, 230, 530, 13, 63, "Input"],
+Cell[8804, 245, 1732, 38, 224, "Output"],
+Cell[10539, 285, 1363, 33, 242, "Output"]
+}, Open  ]],
+Cell[11917, 321, 189, 7, 87, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12143, 333, 98, 1, 64, "Section"],
+Cell[12244, 336, 270, 6, 46, "Input"],
+Cell[12517, 344, 641, 18, 114, "Input"],
+Cell[13161, 364, 246, 7, 28, "Input"],
+Cell[CellGroupData[{
+Cell[13432, 375, 1625, 46, 165, "Input"],
+Cell[15060, 423, 3592, 79, 414, "Output"],
+Cell[18655, 504, 1133, 30, 242, "Output"]
+}, Open  ]],
+Cell[19803, 537, 93, 1, 28, "Input"],
+Cell[19899, 540, 296, 6, 49, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20232, 551, 102, 1, 64, "Section"],
+Cell[20337, 554, 348, 7, 46, "Input"],
+Cell[CellGroupData[{
+Cell[20710, 565, 8522, 212, 760, "Input"],
+Cell[29235, 779, 6916, 139, 374, "Output"]
+}, Open  ]],
+Cell[36166, 921, 398, 9, 106, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[36591, 934, 17, 0, 92, "Title"]
+}
+]
+*)
+
+(* End of internal cache information *)

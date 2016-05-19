@@ -1,0 +1,487 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19765,        477]
+NotebookOptionsPosition[     19071,        448]
+NotebookOutlinePosition[     19417,        463]
+CellTagsIndexPosition[     19374,        460]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+CS 298 - Predator/Prey Dynamics\
+\>", "Title",
+ CellChangeTimes->{{3.646663783111415*^9, 3.6466637916464148`*^9}}],
+
+Cell["Kyle Perra - 7/23/2015", "Subtitle",
+ CellChangeTimes->{{3.646663802078415*^9, 3.6466638121734147`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Lotka Volterra", "Section",
+ CellChangeTimes->{{3.6466639410934143`*^9, 3.6466639462124147`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{
+   "mouseGrowthRate", ",", "mouseConsumptionRate", ",", "hawkDeathRate", ",", 
+    "hawkGrowthRate", ",", "mouse", ",", "hawk", ",", "t", ",", "mouse0", ",",
+     "hawk0", ",", "t1", ",", "tMax"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6466639521164145`*^9, 3.6466639901164145`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"LotkaVolterra", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", " ", 
+      RowBox[{
+      "mouseGrowthRate_", ",", "mouseConsumptionRate_", ",", "hawkDeathRate_",
+        ",", "hawkGrowthRate_"}], "}"}], ",", 
+     RowBox[{"(*", " ", 
+      RowBox[{"4", "-", "vector"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"mouse0_", ",", "hawk0_"}], "}"}], ",", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"starting", " ", "populations", " ", "hawk"}], ",", "mouse"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "t1_"}], "]"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"desired", " ", "time", " ", "calc"}], " ", "*)"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mouse", ",", "hawk", ",", "t"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"mouse", ",", "hawk"}], "}"}], "/.", 
+       RowBox[{"Quiet", "[", 
+        RowBox[{"NDSolve", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"mouse", "'"}], "[", "t", "]"}], "\[Equal]", 
+             RowBox[{
+              RowBox[{"mouseGrowthRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}]}], "-", 
+              RowBox[{"mouseConsumptionRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}]}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"hawk", "'"}], "[", "t", "]"}], "\[Equal]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "hawkDeathRate"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}], "+", 
+              RowBox[{"hawkGrowthRate", "*", 
+               RowBox[{"mouse", "[", "t", "]"}], "*", 
+               RowBox[{"hawk", "[", "t", "]"}]}]}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"mouse", "[", "0", "]"}], "\[Equal]", "mouse0"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"hawk", "[", "0", "]"}], "\[Equal]", "hawk0"}]}], "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"mouse", ",", "hawk"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "0", ",", "t1"}], "}"}]}], "]"}], "]"}]}], "//", 
+      "Flatten"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6466640144724145`*^9, 3.6466644065884147`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"soln", ",", 
+       RowBox[{"col1", "=", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.0", ",", "0.0", ",", "0.9"}], "]"}]}], ",", 
+       RowBox[{"col2", "=", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.9", ",", "0", ",", "0"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Evaluate", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", "t", "]"}], ",", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", "t", "]"}]}], "}"}], "&"}],
+          "[", 
+         RowBox[{"soln", "=", 
+          RowBox[{"LotkaVolterra", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+             "mouseGrowthRate", ",", "\[IndentingNewLine]", 
+              "mouseConsumptionRate", ",", "\[IndentingNewLine]", 
+              "hawkDeathRate", ",", "\[IndentingNewLine]", "hawkGrowthRate"}],
+              "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"mouse0", ",", "hawk0"}], "}"}], ",", "tMax"}], "]"}]}], 
+         "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"Min", "[", 
+          RowBox[{"tMax", ",", 
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "&"}], "/@", 
+             "soln"}], "]"}]}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<time\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"mice", "[", "t", "]"}], ",", "col1"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+              RowBox[{"hawks", "[", "t", "]"}], ",", "col2"}], "]"}]}], 
+           "}"}]}], "}"}]}], ",", " ", 
+       RowBox[{"(*", 
+        RowBox[{"color", " ", "code", " ", 
+         RowBox[{"hawk", "/", "mouse"}], " ", "pops"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"AxesOrigin", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"col1", ",", "col2"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"400", ",", "300"}], "}"}]}], ",", 
+       RowBox[{"ImagePadding", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"55", ",", "40"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", "25"}], "}"}]}], "}"}]}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mouseGrowthRate", ",", "1", ",", "\"\<Mouse Growth Rate\>\""}],
+       "}"}], ",", "0", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "mouseConsumptionRate", ",", "1", ",", 
+       "\"\<Mouse Consumption Rate\>\""}], "}"}], ",", ".01", ",", "5", ",", 
+     ".01", ",", "\[IndentingNewLine]", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"hawkDeathRate", ",", "1", ",", "\"\<Predator Death Rate\>\""}],
+       "}"}], ",", "0", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "hawkGrowthRate", ",", "1", ",", "\"\<Predator Growth Rate\>\""}], 
+      "}"}], ",", "0", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   "\"\<Initial Populations\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mouse0", ",", "3", ",", "\"\<mouse/mice\>\""}], "}"}], ",", 
+     "0", ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"hawk0", ",", "5", ",", "\"\<hawk/hawks\>\""}], "}"}], ",", "0",
+      ",", "20", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "Delimiter", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tMax", ",", "20", ",", "\"\<Projection time\>\""}], "}"}], ",",
+      ".01", ",", "50", ",", 
+     RowBox[{"Apperance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.646664487052415*^9, 3.6466647909287815`*^9}, 
+   3.6466648457624297`*^9, {3.6466649133347235`*^9, 3.646665148936699*^9}, {
+   3.6466652218514338`*^9, 3.6466652506332493`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`hawk0$$ = 5, $CellContext`hawkDeathRate$$ = 
+    5, $CellContext`hawkGrowthRate$$ = 1, $CellContext`mouse0$$ = 
+    3, $CellContext`mouseConsumptionRate$$ = 
+    1, $CellContext`mouseGrowthRate$$ = 1, $CellContext`tMax$$ = 
+    28.400000000000002`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`mouseGrowthRate$$], 1, "Mouse Growth Rate"}, 0, 5, 
+      0.01}, {{
+       Hold[$CellContext`mouseConsumptionRate$$], 1, 
+       "Mouse Consumption Rate"}, 0.01, 5, 0.01}, {{
+       Hold[$CellContext`hawkDeathRate$$], 1, "Predator Death Rate"}, 0, 5, 
+      0.01}, {{
+       Hold[$CellContext`hawkGrowthRate$$], 1, "Predator Growth Rate"}, 0, 5, 
+      0.01}, {
+      Hold["Initial Populations"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`mouse0$$], 3, "mouse/mice"}, 0, 20}, {{
+       Hold[$CellContext`hawk0$$], 5, "hawk/hawks"}, 0, 20}, {{
+       Hold[$CellContext`tMax$$], 20, "Projection time"}, 0.01, 50}}, 
+    Typeset`size$$ = {400., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`mouseGrowthRate$1015$$ = 
+    0, $CellContext`mouseConsumptionRate$1020$$ = 
+    0, $CellContext`hawkDeathRate$1021$$ = 
+    0, $CellContext`hawkGrowthRate$1022$$ = 0, $CellContext`mouse0$1023$$ = 
+    0, $CellContext`hawk0$1024$$ = 0, $CellContext`tMax$1025$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`hawk0$$ = 5, $CellContext`hawkDeathRate$$ = 
+        1, $CellContext`hawkGrowthRate$$ = 1, $CellContext`mouse0$$ = 
+        3, $CellContext`mouseConsumptionRate$$ = 
+        1, $CellContext`mouseGrowthRate$$ = 1, $CellContext`tMax$$ = 20}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`mouseGrowthRate$$, \
+$CellContext`mouseGrowthRate$1015$$, 0], 
+        Hold[$CellContext`mouseConsumptionRate$$, \
+$CellContext`mouseConsumptionRate$1020$$, 0], 
+        Hold[$CellContext`hawkDeathRate$$, $CellContext`hawkDeathRate$1021$$, 
+         0], 
+        Hold[$CellContext`hawkGrowthRate$$, \
+$CellContext`hawkGrowthRate$1022$$, 0], 
+        Hold[$CellContext`mouse0$$, $CellContext`mouse0$1023$$, 0], 
+        Hold[$CellContext`hawk0$$, $CellContext`hawk0$1024$$, 0], 
+        Hold[$CellContext`tMax$$, $CellContext`tMax$1025$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`soln$, $CellContext`col1$ = 
+         RGBColor[0., 0., 0.9], $CellContext`col2$ = RGBColor[0.9, 0, 0]}, 
+        Plot[
+         Evaluate[
+          ({
+           Part[#, 1][$CellContext`t], 
+           
+           Part[#, 2][$CellContext`t]}& )[$CellContext`soln$ = \
+$CellContext`LotkaVolterra[{$CellContext`mouseGrowthRate$$, \
+$CellContext`mouseConsumptionRate$$, $CellContext`hawkDeathRate$$, \
+$CellContext`hawkGrowthRate$$}, {$CellContext`mouse0$$, \
+$CellContext`hawk0$$}, $CellContext`tMax$$]]], {$CellContext`t, 0, 
+          Min[$CellContext`tMax$$, 
+           Min[
+            Map[Part[#, 1, 1, 2]& , $CellContext`soln$]]]}, 
+         AxesLabel -> {"time", {
+            Style[
+             $CellContext`mice[$CellContext`t], $CellContext`col1$], 
+            Style[
+             $CellContext`hawks[$CellContext`t], $CellContext`col2$]}}, 
+         PlotRange -> All, AxesOrigin -> {0, 0}, 
+         PlotStyle -> {$CellContext`col1$, $CellContext`col2$}, 
+         ImageSize -> {400, 300}, ImagePadding -> {{55, 40}, {10, 25}}]], 
+      "Specifications" :> {{{$CellContext`mouseGrowthRate$$, 1, 
+          "Mouse Growth Rate"}, 0, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`mouseConsumptionRate$$, 1, 
+          "Mouse Consumption Rate"}, 0.01, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`hawkDeathRate$$, 1, 
+          "Predator Death Rate"}, 0, 5, 0.01, Appearance -> 
+         "Labeled"}, {{$CellContext`hawkGrowthRate$$, 1, 
+          "Predator Growth Rate"}, 0, 5, 0.01, Appearance -> "Labeled"}, 
+        Delimiter, 
+        "Initial Populations", {{$CellContext`mouse0$$, 3, "mouse/mice"}, 0, 
+         20, Appearance -> 
+         "Labeled"}, {{$CellContext`hawk0$$, 5, "hawk/hawks"}, 0, 20, 
+         Appearance -> "Labeled"}, 
+        Delimiter, {{$CellContext`tMax$$, 20, "Projection time"}, 0.01, 
+         50, $CellContext`Apperance -> "Labeled"}}, 
+      "Options" :> {ControlPlacement -> Left}, "DefaultOptions" :> {}],
+     ImageSizeCache->{849., {179., 184.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`LotkaVolterra[{
+          Pattern[$CellContext`mouseGrowthRate, 
+           Blank[]], 
+          Pattern[$CellContext`mouseConsumptionRate, 
+           Blank[]], 
+          Pattern[$CellContext`hawkDeathRate, 
+           Blank[]], 
+          Pattern[$CellContext`hawkGrowthRate, 
+           Blank[]]}, {
+          Pattern[$CellContext`mouse0, 
+           Blank[]], 
+          Pattern[$CellContext`hawk0, 
+           Blank[]]}, 
+         Pattern[$CellContext`t1, 
+          Blank[]]] := 
+       Module[{$CellContext`mouse, $CellContext`hawk, $CellContext`t}, 
+         Flatten[
+          ReplaceAll[{$CellContext`mouse, $CellContext`hawk}, 
+           Quiet[
+            
+            NDSolve[{
+             Derivative[
+               1][$CellContext`mouse][$CellContext`t] == \
+$CellContext`mouseGrowthRate $CellContext`mouse[$CellContext`t] - \
+$CellContext`mouseConsumptionRate $CellContext`mouse[$CellContext`t] \
+$CellContext`hawk[$CellContext`t], 
+              Derivative[
+               1][$CellContext`hawk][$CellContext`t] == \
+(-$CellContext`hawkDeathRate) $CellContext`hawk[$CellContext`t] + \
+$CellContext`hawkGrowthRate $CellContext`mouse[$CellContext`t] \
+$CellContext`hawk[$CellContext`t], $CellContext`mouse[
+               0] == $CellContext`mouse0, $CellContext`hawk[
+               0] == $CellContext`hawk0}, {$CellContext`mouse, \
+$CellContext`hawk}, {$CellContext`t, 0, $CellContext`t1}]]]]], 
+       Attributes[Derivative] = {NHoldAll, ReadProtected}}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.6466652691748185`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Predator Prey Hypothesis Testing\
+\>", "Section",
+ CellChangeTimes->{{3.6466657677636805`*^9, 3.6466657752049284`*^9}}],
+
+Cell["\<\
+1) When increasing the mouse growth rate (from 1 to 5), the mice population \
+actually goes down significantly (about half of the max population for a \
+mouse growth rate of one). On the other hand, performing the same increase in \
+growth rate increases the max value for hawk population (from six to eight) \
+and also decreases its minimum value (from ~0 to 3). The manipulate result is \
+not counter-intutive in my opinion - initially, the hawk and mouse \
+populations have a similar growth rate and thusly follow a similar wavelength \
+pattern. When the mouse population increases its growth rate, the environment \
+can subsequently support more hawks and with an increase in hawk population, \
+the mouse population is decreased and will now fluctuate between max and min \
+values more rapidly.
+
+2) When increasing the predator death rate (from 1 to 5) the hawk population \
+decreases in its max value slightly (from ~6 to ~5.5), whereas the mice \
+population\[CloseCurlyQuote]s minimum and maximum values increase (to 2 and \
+~12, respectively). The manipulate result is not counter-intuitive when \
+considering that (in response to the increased predator death rate) the mice \
+population will subsequently increase. Also, since the hawk lifespan is \
+dramatically decreased, the predators can no longer keep up with the mouse \
+growth rate, and the respective minimum and maximum values between the two \
+populations is subsequently further separate from one another.
+
+3) The \[OpenCurlyDoubleQuote]peaks\[CloseCurlyDoubleQuote] for both mice and \
+hawk populations are spread across a much wider time gap, where both \
+populations have maximum values of above 20. The increase in time between the \
+peaks is in due response to the initial mouse population. Moreover, \
+considering there are initially many mice, the environment subsequently \
+becomes favorable for predators (hawks). As such, the hawk population \
+skyrockets with an abundance of prey and then dives back down towards a \
+zero-level population after these predators eliminate the mouse population \
+(as there are too many hawks in the environment to support continued mouse \
+development).\
+\>", "Text",
+ CellChangeTimes->{{3.6466658408060284`*^9, 3.6466660270515966`*^9}, {
+  3.6466661071109962`*^9, 3.6466662045875964`*^9}, {3.6466664549917965`*^9, 
+  3.6466664563333964`*^9}, {3.6466665441502504`*^9, 3.646666872783758*^9}, {
+  3.6466670521234174`*^9, 3.646667417799325*^9}, {3.646667555094702*^9, 
+  3.6466677054118147`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{Automatic, 189}, {Automatic, 59}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 124, 3, 83, "Title"],
+Cell[706, 27, 110, 1, 49, "Subtitle"],
+Cell[CellGroupData[{
+Cell[841, 32, 103, 1, 71, "Section"],
+Cell[947, 35, 352, 7, 31, "Input"],
+Cell[1302, 44, 2591, 65, 232, "Input"],
+Cell[CellGroupData[{
+Cell[3918, 113, 5662, 143, 532, "Input"],
+Cell[9583, 258, 6765, 137, 380, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16397, 401, 129, 3, 71, "Section"],
+Cell[16529, 406, 2514, 38, 389, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
